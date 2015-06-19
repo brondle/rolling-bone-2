@@ -6,7 +6,14 @@ export default Ember.Controller.extend({
   	this.set('isEditingAnswer', true);
   },
   saveAnswer: function() {
-  	this.set('isEditingAnswer', false);
+    var answer = this.get('model');
+    answer.set('answer', this.get('answer'));
+    answer.save();
+    this.setProperties({
+      answer: ''
+    })
+    this.set('isEditing', false);
+    this.transitionToRoute('answers')
   },
   delete: function() {
   	if (confirm('Are you sure?')) {

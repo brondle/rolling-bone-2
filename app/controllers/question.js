@@ -22,15 +22,15 @@ export default Ember.Controller.extend({
     },
     post: function() {
       this.set('isAnswering', false);
+      var controller = this;
       var newA = this.store.createRecord('answer', {
         answer: this.get('answer'),
       });
-      newA.save();
-
-      var question = this.get('controllers.question.model');
-      console.log(question.get('question'))
-      question.get('answers').pushObject(newA);
-      question.save();
+      newA.save().then(function() {
+        var question = controller.get('model');
+        question.get('answers').pushObject(newA);
+        question.save();
+    });
     },
     delete: function() {
     	if (confirm('Are you sure?')) {

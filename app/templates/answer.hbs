@@ -8,7 +8,7 @@
     <button class="btn btn-primary" {{action 'saveAnswer'}}>Save</button>
   </form>
 {{else}}
-  <p>{{answer}}</p>
+  <p>{{model.answer}}</p>
 
   <button class="btn btn-primary" {{action 'editAnswer'}}>Edit</button>
 {{/if}}
