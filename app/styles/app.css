@@ -1,0 +1,23 @@
+.look-pretty {
+	left-margin: auto;
+	right-margin: auto;
+	padding-left: 20px;
+	text-align: center;
+	font-family: helvetica;
+}
+
+@font-face {
+  font-family: 'yahoo';
+  src:url("/public/Yahoo.ttf");
+}
+
+.woohoo {
+	font-family:yahoo;
+}
+
+.header {
+    height:50px;
+    background:#9900FF;
+    margin:0px auto;
+
+}
