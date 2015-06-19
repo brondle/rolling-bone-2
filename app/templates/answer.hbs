@@ -1,0 +1,15 @@
+{{#if isEditingAnswer}}
+  <form>
+    <div class="form-group">
+      <label for="answer">Answer</label>
+      {{textarea value=answer id="answer" class="form-control"}}
+    </div>
+
+    <button class="btn btn-primary" {{action 'saveAnswer'}}>Save</button>
+  </form>
+{{else}}
+  <p>{{answer}}</p>
+
+  <button class="btn btn-primary" {{action 'editAnswer'}}>Edit</button>
+{{/if}}
+	<button class="btn btn-danger" {{action 'delete'}}>Delete</button>

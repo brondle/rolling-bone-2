@@ -1,0 +1,14 @@
+<h2>Questions</h2>
+<ul>
+  {{#each question in model}}
+  <li>{{#link-to 'question' question.id}}{{question.question}}{{/link-to}}</li>
+  {{/each}}
+</ul>
+
+<form>
+  <div class="form-group">
+    <label for="new_question">New question</label>
+    {{input id ="new_question" class="form-control" value=new_question}}
+    <button class="btn btn-primary" {{action 'post'}}>Post</button>
+  </div>
+</form>

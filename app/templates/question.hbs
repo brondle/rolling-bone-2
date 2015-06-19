@@ -1,0 +1,42 @@
+<div class="text-center">
+<h3>{{model.question}}</h3>
+<br>
+{{#if isEditing}}
+  <form>
+    <div class="form-group">
+      <label for="question">Question</label>
+      {{textarea value=question id="question" class="form-control"}}
+    </div>
+
+    <button class="btn btn-primary" {{action 'save'}}>Save</button>
+  </form>
+{{else}}
+  <p>{{body}}</p>
+
+  <button class="btn btn-primary" {{action 'edit'}}>Edit</button>
+{{/if}}
+<button class="btn btn-danger" {{action 'delete'}}>Delete</button>
+<br>
+<br>
+{{#link-to 'answers'}}View Answers{{/link-to}}
+<br>
+{{outlet}}
+<br>
+{{#if isAnswering}}
+<form>
+  <div class="form-group">
+    <label for="answer">Answer</label>
+    {{input id ="answer" class="form-control" value=answer}}
+    <button class="btn btn-primary" {{action 'post'}}>Post</button>
+  </div>
+</form>
+
+{{else}}
+<br>
+<button class="btn btn-primary" {{action 'reply'}}>Answer</button>
+{{/if}}
+<br>
+<br>
+<br>
+{{#link-to 'questions'}}Home{{/link-to}}
+</div>

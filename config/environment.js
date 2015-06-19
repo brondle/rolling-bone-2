@@ -1,9 +1,10 @@
 /* jshint node: true */
-
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'woohoo-answers',
     environment: environment,
+    contentSecurityPolicy: { 'connect-src': "'self' wss://*.firebaseio.com" },
+    firebase: 'https://flickering-fire-561.firebaseio.com/',
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
